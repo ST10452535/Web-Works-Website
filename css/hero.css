@@ -1,0 +1,80 @@
+.six-week-hero {
+    margin-top: 80px; 
+    height: 70vh;
+    background: linear-gradient(90deg, #E7717DFF 0%, #FDF1D9FF 100%);
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+.six-month-hero {
+    margin-top: 80px; 
+    height: 70vh; 
+    background: linear-gradient(90deg, #E7717DFF 0%, #FDF1D9FF 100%);
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+.child-minding-hero {
+    margin-top: 80px; 
+    height: 100vh; 
+    background-image: url('../_images/Child-Minding-Cover.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+.cooking-hero {
+    margin-top: 80px; 
+    height: 100vh; 
+    background-image: url('../_images/Cooking-Cover.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+.garden-maintenance-hero {
+    margin-top: 80px; 
+    height: 100vh; 
+    background-image: url('../_images/GardenMaintenance-Cover.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+.first-aid-hero {
+    margin-top: 80px; 
+    height: 100vh; 
+    background-image: url('../_images/FirstAid-Cover.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+.sewing-hero {
+    margin-top: 80px; 
+    height: 100vh; 
+    background-image: url('../_images/Sewing-Cover.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+.landscaping-hero {
+    margin-top: 80px; 
+    height: 100vh; 
+    background-image: url('../_images/Landscaping-Cover.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+.life-skills-hero {
+    margin-top: 80px; 
+    height: 100vh; 
+    background-image: url('../_images/LifeSkills-Cover.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}

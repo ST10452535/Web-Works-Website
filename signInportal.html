@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Portal Sign In</title>
+    <link
+        rel="icon"
+        href="./_images/Empowering_the_nation__1_-removebg-preview (1).png"
+        type="image/png"
+    >
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+      import {
+        getAuth,
+        signInWithEmailAndPassword,
+        sendPasswordResetEmail,
+      } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBNgmIM9ZuvZ6XGXBLwwjvcA_0iZFeEFgM",
+        authDomain: "xhaw-38afb.firebaseapp.com",
+        databaseURL: "https://xhaw-38afb-default-rtdb.firebaseio.com",
+        projectId: "xhaw-38afb",
+        storageBucket: "xhaw-38afb.appspot.com",
+        messagingSenderId: "1083342543018",
+        appId: "1:1083342543018:web:197cae3d50914ba34098d3",
+        measurementId: "G-86ELK1E11Y",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      const analytics = getAnalytics(app);
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const loginForm = document.getElementById("loginForm");
+        loginForm.addEventListener("submit", async (event) => {
+          event.preventDefault();
+
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+
+          try {
+            await signInWithEmailAndPassword(auth, email, password);
+            alert("Login successful! Navigating to Home Screen");
+            window.location.href = "homePage.html";
+          } catch (error) {
+            alert("Login failed: " + error.message);
+          }
+        });
+      });
+
+      function handleResetPassword() {
+        const email = document.getElementById("email").value;
+
+        if (email === "") {
+          alert("Please enter your email first.");
+          return;
+        }
+
+        sendPasswordResetEmail(auth, email)
+          .then(() => {
+            alert("Password reset email sent!");
+          })
+          .catch((error) => {
+            alert("Error: " + error.message);
+          });
+      }
+
+      function switchPasswordType() {
+        const passwordField = document.getElementById("password");
+        const passIcon = document.getElementById("passIcon");
+
+        if (passwordField.type === "password") {
+          passwordField.type = "text";
+          passIcon.className = "bi bi-eye-slash";
+        } else {
+          passwordField.type = "password";
+          passIcon.className = "bi bi-eye";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="header-bar">
+      <div class="logo">
+        <img
+          src="./_images/Empowering_the_nation__1_-removebg-preview (1).png"
+          alt="Empowering the Nation Logo"
+          width="80"
+          height="90"
+        />
+      </div>
+
+      <nav id="nav-bar">
+        <div class="header-menu">
+          <a href="homePage.html" class="header-menu-item">Home</a>
+          <div class="dropdown">
+            <p>Courses<span></span></p>
+            <ul>
+              <li><a href="summaryShort.html">Six-week Courses</a></li>
+              <li><a href="summaryLong.html">Six-month Corses</a></li>
+            </ul>
+          </div>
+          <a href="enquiryPage.html" class="header-menu-item">Enquire</a>
+          <a href="contactUs.html" class="header-menu-item">Contact</a>
+          <a href="signInportal.html" class="header-menu-item"
+            ><img
+              src="./_images/user.png"
+              alt="unclicked student icon"
+              class="student-icon"
+          /></a>
+        </div>
+      </nav>
+    </div>
+
+    <main>
+      <div class="SSR">
+        <div class="SSR-box">
+          <form class="signinForm" id="loginForm">
+            <h1>Student Sign-In</h1>
+            <img
+              class="student-logo"
+              src="./_images/Empowering_the_nation__1_-removebg-preview (1).png"
+              height="250px"
+              width="250px"
+              alt="Empowering the Nation Logo"
+            />
+
+            <div class="textbox4">
+              <label for="email">Email </label> <br />
+              <input
+                class="SSR-Input"
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label> <br />
+              <input
+                class="SSR-Input"
+                type="password"
+                id="password"
+                placeholder="Enter your password"
+                required
+              />
+              <button
+                class="show-btn"
+                title="Show"
+                type="button"
+                onclick="switchPasswordType()"
+              >
+                <i id="passIcon" class="bi bi-eye"></i>
+              </button>
+            </div>
+
+            <button class="SSR-BTN" type="submit">Sign In</button>
+            <button
+              class="SSR-BTN"
+              type="button"
+              onclick="window.location.href='Signup.html';"
+            >
+              Sign Up
+            </button>
+            <button
+              class="SSR-BTN"
+              type="button"
+              onclick="window.location.href='PassWordRecovery.html';"
+            >
+              Forgot Password
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

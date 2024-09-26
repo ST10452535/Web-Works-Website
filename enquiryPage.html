@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/styles.css">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiry</title>
+    <link
+        rel="icon"
+        href="./_images/Empowering_the_nation__1_-removebg-preview (1).png"
+        type="image/png"
+    >
+
+    <script src="./js/script.js"></script>
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const selectedCourse = urlParams.get('selectedCourse');
+    
+            if (selectedCourse === 'FirstAid') {
+                document.getElementById('checkbox1').checked = true;
+            }
+            if (selectedCourse === 'Sewing') {
+                document.getElementById('checkbox2').checked = true;
+            }
+            if (selectedCourse === 'landscaping') {
+                document.getElementById('checkbox3').checked = true;
+            }
+            if (selectedCourse === 'LifeSkills') {
+                document.getElementById('checkbox4').checked = true;
+            }
+            if (selectedCourse === 'ChildMinding') {
+                document.getElementById('checkbox5').checked = true;
+            }
+            if (selectedCourse === 'Cooking') {
+                document.getElementById('checkbox6').checked = true;
+            }
+            if (selectedCourse === 'gardenmaintenance') {
+                document.getElementById('checkbox7').checked = true;
+            }
+        };
+    </script>
+</head>
+<body>
+
+    <div class="header-bar">
+        <div class="logo">
+            <img src="./_images/Empowering_the_nation__1_-removebg-preview (1).png" alt="Empowering the Nation Logo" width="80" height="90">
+        </div>
+
+        <nav id="nav-bar">
+            <div class="header-menu">
+                <a href="homePage.html" class="header-menu-item">Home</a>
+            <div class="dropdown">
+                <p>Courses<span></span></p>
+                <ul>
+                    <li><a href="summaryShort.html">Six-week Courses</a></li>
+                    <li><a href="summaryLong.html">Six-month Corses</a></li>
+                </ul>
+            </div> 
+            <a href="enquiryPage.html" class="header-menu-item">Enquire</a>
+            <a href="contactUs.html" class="header-menu-item">Contact</a>
+            <a href="signInportal.html" class="header-menu-item"><img src="./_images/user (1).png" alt="unclicked student icon" class="student-icon"></a>
+            </div>
+        </nav>
+    </div>
+
+    <main>
+
+        <div class="enquiry">
+            <h1>Enquire Today</h1>
+
+            <div id="enquiry form">
+
+                <div id="form">
+                    <form name="Enquiry Form" id="Enquiry Form" action="" method="get">
+
+                        <div class="textbox1">
+                            <label class="label" for="fullName">Your name</label> <br>
+                            <input type="text" name="Your name" id="fullName" placeholder="Full name" required/>
+                        </div>
+                        
+                        <div class="textbox2">
+                             <label class="label" for="phoneNumber">Your phone number</label> <br>
+                             <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="+27" required/>
+                        </div>
+                        
+                        <div class="textbox3">
+                             <label class="label" for="emailAddress">Your email</label> <br>
+                             <input type="email" name="emailAddress" id="emailAddress" placeholder="yourmail@mail.com" required/>
+                        </div>
+                        
+                        
+                        <h2 class="checkbox-header">Select the course</h2>
+                        
+                        <div class="checkbox-container">
+                            <div class="left-checkboxes">
+                                <label for="checkbox1">First Aid - R1500</label>
+                                <input type="checkbox" id="checkbox1" value="1500"/> <br>
+
+                                <label for="checkbox2">Sewing - R1500</label>
+                                <input type="checkbox" id="checkbox2" value="1500"/> <br>
+
+                                <label for="checkbox3">Landscaping- - R1500</label>
+                                <input type="checkbox" id="checkbox3" value="1500"/> <br>
+
+                                <label for="checkbox4">Life Skills - R1500</label>
+                                <input type="checkbox" id="checkbox4" value="1500"/> <br>
+                            </div>
+
+                            <div class="right-checkboxes">
+                                <label for="checkbox5">Child Minding - R750</label>
+                                <input type="checkbox" id="checkbox5" value="750"/> <br>
+
+                                <label for="checkbox6">Cooking - R750</label>
+                                <input type="checkbox" id="checkbox6" value="750"/> <br>
+
+                                <label for="checkbox7">Garden Maintenance - R750</label>
+                                <input type="checkbox" id="checkbox7" value="750"/> <br>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <button class="button6" type="button" id="button" value="submit">Send Enquiry</button>
+
+                        <button class="button7" type="button" onclick="calculateTotal()">Calculate Fees</button>
+                    </form>
+                </div>
+                
+                <div class="side-image-text">
+                    <img src="./_images/EnquiryPage-Pic.jpg" alt="EnquiryPage-Pic">
+                </div>
+
+                <div class="fees-note">
+                    <h2>Total Fees</h2>
+                    <p id="totalAmount" class="total-amount">Your Total will be: R</p>
+
+                    <h5>Note:</h5>
+                    <p>Through completing this form, a consultant will then contact you , and booking will be made for course/s</p>
+                </div>
+
+            </div>
+        </div>
+        
+    </main>
+
+    <footer>
+    
+        <div class="footer-bar">
+            <div class="footer-logo">
+                <img src="./_images/Empowering_the_nation__1_-removebg-preview (1).png" alt="Empowering the Nation Logo">
+            </div>
+        
+            <a href="homePage" class="home-link">Home</a>           
+            <a href="summaryShort.html" class="short-link">Six-week Courses</a>
+            <a href="summaryLong.html" class="long-link">Six-month Courses</a>  
+            <a href="enquiryPage.html" class="enquire-link">Enquire</a>
+            <a href="questions.html" class="contact-link">Contact</a>
+        
+            <div class="social-links-icons">
+                <h2>Follow Us</h2>
+                
+                <a href="https://x.com/" class="twitter-link"><img src="./_images/twitter.png" alt="twitter logo" class="twitter-icon"></a>
+                <a href="https://www.facebook.com/" class="facebook-link"><img src="./_images/facebook.png" alt="facebook logo" class="facebook-icon"></a>
+                <a href="https://za.linkedin.com/" class="linkedin-link"><img src="./_images/linkedin.png" alt="linked in logo" class="linkedin-icon"></a>
+                <a href="https://www.youtube.com/" class="youtube-link"><img src="./_images/youtube.png" alt="youtube logo" class="youtube-icon"></a>
+                
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2024 Empowering the Nation</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
